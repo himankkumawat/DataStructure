@@ -59,13 +59,37 @@ public class SinglyLinkedList {
         }
     }
 
+    public void deleteAtIndex(int index) {
+        if(head == null || index < 0) {
+            System.out.println("Invalid index...");
+            return;
+        }
+        if(index == 0) {
+            System.out.println("Deleted at index :" + index);
+            head = head.next;
+            return;
+        }
+        Node temp = head;
+        int current = 1;
+        while (temp.next != null && current < index) {
+            temp = temp.next;
+            current++;
+        }
+        if(temp.next != null && current == index) {
+            System.out.println("Deleted at index: " + index);
+            temp.next = temp.next.next;
+        }
+    }
+
     public static void main(String[] args) {
         SinglyLinkedList linkedList = new SinglyLinkedList();
         linkedList.add(1);
         linkedList.add(2);
         linkedList.add(3);
         linkedList.add(4);
-        linkedList.addAtIndex(0, 1);
+        linkedList.addAtIndex(0, 0);
+
+        linkedList.deleteAtIndex(1);
 
         linkedList.displayLinkedList();
     }
