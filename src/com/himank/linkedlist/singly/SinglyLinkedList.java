@@ -48,7 +48,6 @@ public class SinglyLinkedList {
         }
         System.out.println("Invalid Index...");
         return null;
-
     }
 
     public void displayLinkedList() {
