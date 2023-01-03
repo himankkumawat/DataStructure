@@ -4,6 +4,9 @@ public class SinglyLinkedList {
 
     private Node head;
 
+    public Node getHead() {
+        return head;
+    }
     public class Node {
         Node next;
         int data;
