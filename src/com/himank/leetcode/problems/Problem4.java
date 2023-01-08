@@ -29,12 +29,10 @@ public class Problem4 {
     }
 
     private static int[] getArray1() {
-        int[] arr = {1, 2};
-        return arr;
+        return new int[]{1, 2};
     }
 
     private static int[] getArray2() {
-        int[] arr = {3, 4};
-        return arr;
+        return new int[]{3, 4};
     }
 }
