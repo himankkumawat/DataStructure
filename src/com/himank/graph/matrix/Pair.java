@@ -2,7 +2,7 @@ package com.himank.graph.matrix;
 
 import java.io.Serializable;
 
-public class Pair<K, V> implements Serializable {
+public class Pair<K, V> implements Serializable, Comparable<Pair> {
 
     private K key;
     private V value;
@@ -49,5 +49,10 @@ public class Pair<K, V> implements Serializable {
 
             return true;
         }
+    }
+
+    @Override
+    public int compareTo(Pair pair) {
+        return (int) this.value - (int) pair.value;
     }
 }
