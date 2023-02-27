@@ -41,6 +41,7 @@ public class BinaryTree {
     }
 
     public static void levelOrderPrint(Node root) {
+        if(root == null) return;
         Queue<Node> queue = new LinkedList<>();
         queue.add(root);
         queue.add(null);
@@ -48,8 +49,9 @@ public class BinaryTree {
             Node current = queue.poll();
             if (current == null) {
                 System.out.println();
-                if (queue.isEmpty()) break;
-                else queue.add(null);
+                /*if (queue.isEmpty()) break;
+                else queue.add(null);*/
+                if(!queue.isEmpty()) queue.add(null);
                 continue;
             }
             System.out.print(current.data + "  ");
@@ -82,6 +84,6 @@ public class BinaryTree {
             this.right = null;
         }
     }
-    
+
 }
 
