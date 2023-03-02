@@ -17,12 +17,17 @@ public class CountTotalNodes {
     public static int index = -1;
 
     public static Node buildTree(int[] nodes) {
+        index = -1;
+        return buildNewTree(nodes);
+    }
+
+    private static Node buildNewTree(int[] nodes) {
         index++;
         if (nodes[index] == -1) return null;
 
         Node newNode = new Node(nodes[index]);
-        newNode.left = buildTree(nodes);
-        newNode.right = buildTree(nodes);
+        newNode.left = buildNewTree(nodes);
+        newNode.right = buildNewTree(nodes);
 
         return newNode;
     }
