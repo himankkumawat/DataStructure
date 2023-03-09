@@ -1,4 +1,7 @@
-package com.himank.trees;
+package com.himank.trees.bst;
+
+import com.himank.trees.CountTotalNodes;
+import com.himank.trees.Node;
 
 public class ValidateBST {
 
