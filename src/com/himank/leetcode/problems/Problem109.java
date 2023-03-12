@@ -49,7 +49,7 @@ public class Problem109 {
         return head;
     }
 
-    public static class ListNode {
+    private static class ListNode {
         int val;
         ListNode next;
 
@@ -66,7 +66,7 @@ public class Problem109 {
         }
     }
 
-    public static class TreeNode {
+    private static class TreeNode {
         int val;
         TreeNode left;
         TreeNode right;
