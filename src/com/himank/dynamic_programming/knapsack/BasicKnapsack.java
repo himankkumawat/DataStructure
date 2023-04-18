@@ -26,7 +26,6 @@ public class BasicKnapsack {
             }
         }
 
-
         return topDownDP[n][w];
     }
 
@@ -57,9 +56,9 @@ public class BasicKnapsack {
             return dp[n][w];
 
         if (weight[n - 1] > w)
-            return dp[n][w] = knapsackRecursion(weight, values, w, n - 1);
+            return dp[n][w] = knapsackMemoization(weight, values, w, n - 1);
 
-        return dp[n][w] = Math.max(values[n - 1] + knapsackRecursion(weight, values, w - weight[n - 1], n - 1),
-                knapsackRecursion(weight, values, w, n - 1));
+        return dp[n][w] = Math.max(values[n - 1] + knapsackMemoization(weight, values, w - weight[n - 1], n - 1),
+                knapsackMemoization(weight, values, w, n - 1));
     }
 }
