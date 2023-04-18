@@ -1,4 +1,4 @@
-package com.himank.dynamic_programming;
+package com.himank.dynamic_programming.knapsack;
 
 public class CountOfSubsetWithGivenSum {
 
