@@ -1,13 +1,24 @@
 package com.himank.dynamic_programming.knapsack;
 
-public class SubSetProblem {
+public class EqualSumPartition {
 
     public static void main(String[] args) {
-        int[] arr = {2, 3, 7, 8, 10};
-        int targetSum = 14;
-        System.out.println("Target sum is possible via Top down ? : " + isSubSetSumExist(arr, targetSum));
-        System.out.println("Target sum is possible via Memoization ? : " + isSubsetSumExistsRecursivelyMemoization(arr, targetSum, arr.length));
-        System.out.println("Target sum is possible via Recursive ? : " + isSubsetSumExistsRecursively(arr, targetSum, arr.length));
+        int[] arr = {1, 5, 11, 5};
+
+        int sum = 0;
+        for (int ele : arr) {
+            sum += ele;
+        }
+        // if sum --> odd, then answer is always false.
+
+        System.out.println("Equal Sum Partition is possible via top down? :" + (sum % 2 == 0 &&
+                isSubSetSumExist(arr, sum / 2)));
+
+        System.out.println("Equal Sum Partition is possible via Memoization? :" + (sum % 2 == 0 &&
+                isSubsetSumExistsRecursivelyMemoization(arr, sum/2, arr.length)));
+
+        System.out.println("Equal Sum Partition is possible via recursively? :" + (sum % 2 == 0 &&
+                isSubsetSumExistsRecursively(arr, sum/2, arr.length)));
     }
 
     public static boolean isSubSetSumExist(int[] arr, int targetSum) {
@@ -32,10 +43,9 @@ public class SubSetProblem {
             }
         }
         return t[n][targetSum];
-
     }
 
-    static Boolean[][] dp = new Boolean[5 + 1][15 + 1];                         // This is hardcoded for the example taken above.
+    static Boolean[][] dp = new Boolean[4 + 1][11 + 1];                         // This is hardcoded for the example taken above. 11 = sum / 2
 
     static {
         for (int i = 0; i < dp.length; i++) {
