@@ -5,6 +5,7 @@ public class Problem1903 {
     // https://leetcode.com/problems/largest-odd-number-in-string/
     public static void main(String[] args) {
         String number = "35427";
+        System.out.println("Largest Odd Number in String : " + largestOddNumber(number));
     }
 
     public static String largestOddNumber(String num) {
